@@ -432,3 +432,20 @@ const {register, formState:{errors}, handleSubmit}=useForm({
           formState=(to handle the validation ,errors that the form generated)
 
           handleSubmit=(while tha form is submit, to handle the submission event we use this)
+
+# Validation of the form from the frontend
+# 1. Yup
+# 2. Joi
+
+Basically client can provide any shorts of the data from the frontend but also we need to control as email,  password as max, min and including character and so on
+
+As Joi and yup both will work for the same purpose for the validation of the schema of the form
+
+# validation using of the react-hook-form
+# 1. <yarn add yup/joi @reacthook/resolvers>
+    form here we can use any of the libery for the schema validation 
+# 2. @reacthook/resolvers is required
+what ever the validation of the form we required must need from the joi we can follow the same method but need to work from the hook resolever schema
+
+
+

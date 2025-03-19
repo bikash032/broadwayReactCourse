@@ -1,7 +1,9 @@
 
 import GoogleButton from "react-google-button";
 import { useForm } from "react-hook-form";
-
+import Joi from "joi"
+import { joiResolver } from "@hookform/resolvers/joi";
+import { message } from "antd";
 type LoginParams = {
   label: any;
 };
@@ -9,12 +11,22 @@ interface ICrediential {
   email: string | null;
   password: string | null;
 }
+
+const userLoginDTO=Joi.object({
+  email:Joi.string().email({tlds:{allow:false}}).required().messages({
+    "string.base":"Email cannot be Empty"
+  }),
+  password:Joi.string().required()
+})
+
+
 export const RightSection = ({ label }: LoginParams) => {
 const {register, formState:{errors}, handleSubmit}=useForm({
   defaultValues:{
       email:null,
       password:null
-  } as ICrediential
+  } as ICrediential,
+  resolver:joiResolver(userLoginDTO)
 })
 
   const SubmitForm = (data:ICrediential) => {
@@ -75,7 +87,7 @@ const {register, formState:{errors}, handleSubmit}=useForm({
           />
           <div className="flex text-red-700 italic text-sm">
             {
-              errors.password?"*Password is required !":""
+             errors?.password?.message
             }
           </div>
           </div>
