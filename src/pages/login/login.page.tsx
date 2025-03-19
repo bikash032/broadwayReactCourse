@@ -4,7 +4,7 @@
 
 import "./login.page.css";
 import { LeftSection } from "./leftSection";
-import { RightSecton } from "./RightSection";
+import { RightSection } from "./RightSection";
 const LoginPage = () => {
   
   return (
@@ -16,7 +16,7 @@ const LoginPage = () => {
        <LeftSection/>
 
         {/* Right Section */}
-        <RightSecton label ={'Username'}/>
+        <RightSection label ={'Username'}/>
           </div>
         </div>
       </div>

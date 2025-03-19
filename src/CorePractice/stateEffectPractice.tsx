@@ -1,7 +1,7 @@
-import SectionTitle from "../../component/section/title/section-title.components";
-import SectionDetail from "../../component/section/detail/section-detail.component";
+import SectionTitle from "../component/section/title/section-title.components";
+import SectionDetail from "../component/section/detail/section-detail.component";
 import { useEffect, useState } from "react";
-import { LoaderSkeleton } from "../../component/loader/skelaton.loader";
+import { LoaderSkeleton } from "../component/loader/skelaton.loader";
 
 const LoginPage1 = () => {
   const [email, setEmail] = useState<string | null>(

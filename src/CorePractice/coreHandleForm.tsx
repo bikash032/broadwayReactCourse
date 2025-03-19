@@ -1,84 +1,61 @@
-
+import { useState } from "react";
 import GoogleButton from "react-google-button";
-import { useForm } from "react-hook-form";
 
 type LoginParams = {
   label: any;
 };
 interface ICrediential {
-  email: string | null;
-  password: string | null;
+  email: String | null;
+  password: String | null;
 }
-export const RightSection = ({ label }: LoginParams) => {
-const {register, formState:{errors}, handleSubmit}=useForm({
-  defaultValues:{
-      email:null,
-      password:null
-  } as ICrediential
-})
+export const RightSecton = ({ label }: LoginParams) => {
+  const [crediential, setCrediential] = useState<ICrediential>({
+    email: null,
+    password: null,
+  });
+  console.log(crediential);
 
-  const SubmitForm = (data:ICrediential) => {
-  console.log("submit",data);
-  
+  const SubmitForm = (e: any) => {
+    e.preventDefault()
   };
-  console.log(errors);
-  
   return (
     <div className="w-full md:w-1/2 p-5 flex flex-col justify-center">
-      <h1 className="text-xl font-extrabold text-green-900 text-center md:text-left" >
+      <h1 className="text-xl font-extrabold text-green-900 text-center md:text-left">
         Login
       </h1>
-      <form onSubmit={handleSubmit(SubmitForm)}>
+      <form action="" onSubmit={SubmitForm}>
         <div className="mt-4 flex flex-col md:flex-row">
           <label className="block text-md font-medium py-3 md:w-2/5">
-              
             {label}
           </label>
-<div>
-<input
-            // name="email"
+          <input
+            name="email"
             type="email"
-            // onChange={(event) => {
-            //   setCrediential({
-            //     ...crediential,
-            //     email: event.target.value,
-            //   });
-            // }}
-            {...register("email",{required:true})}
+            onChange={(event) => {
+              setCrediential({
+                ...crediential,
+                email: event.target.value,
+              });
+            }}
             placeholder="Enter your Email..."
             className="w-full border border-gray-300 rounded-md p-2 mt-1"
           />
-          <div className="flex text-red-700 italic text-sm">
-            {
-            errors.email?"*Email is required !":""
-            }
-          </div>
-</div>
         </div>
         <div className="flex flex-col md:flex-row mt-4">
           <label className="block text-md font-medium py-3 md:w-2/5">
             Password:
           </label>
-          <div>
           <input
-          // name="passsword",
             type="password"
             placeholder="Enter your password..."
-            // onChange={(event) => {
-            //   setCrediential({
-            //     ...crediential,
-            //     password: event.target.value,
-            //   });
-            // }}
-            {...register("password",{required:true})}
+            onChange={(event) => {
+              setCrediential({
+                ...crediential,
+                password: event.target.value,
+              });
+            }}
             className="w-full border border-gray-300 rounded-md p-2 mt-1"
           />
-          <div className="flex text-red-700 italic text-sm">
-            {
-              errors.password?"*Password is required !":""
-            }
-          </div>
-          </div>
         </div>
         <div className="mt-4 flex justify-end space-x-6">
           <button className="bg-red-600 text-white py-2 px-6 rounded-md hover:bg-red-700 hover:cursor-pointer">

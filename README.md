@@ -53,7 +53,7 @@ export default tseslint.config({
 });
 ```
 
-# react-practice
+# React-practice
 
 react application setup
 tech used
@@ -351,14 +351,84 @@ imputs are
    # Any things that we are doing inside of the web browser is called as the event
 
 
-    # There are many types of the events
-       1. 
-
-# As we see the button in the html that is is just the button(HTML) elment that will trigger the event for the submit acton. As we need to pass the type that will perform the event, so when we make the html tag we need to pass our type that is similar to the name that we mentioned to backend such as submit reset, username, password, role and everything 
+    # There are many types of the events 
+ As we see the button in the html that is is just the button(HTML) elment that will trigger the event for the submit acton. As we need to pass the type that will perform the event, so when we make the html tag we need to pass our type that is similar to the name that we mentioned to backend such as submit reset, username, password, role and everything 
 2. second we need to collect the data from the users and how to collect
 
 
-# let's handle the form in react
-   # 1. Firstly form will be not handled by the action in the react. So, for this we need to handle by it with the event listner. 
+   # let's handle the form in react
+   1. Firstly form will be not handled by the action in the react. So, for this we need to handle by it with the event listner. 
 
-   # 2. All the <input> html tag inside of the form that we must pass the <name="username">,<name="password"> as the basic of the data we need to send for the backend through API that must be stored in the backend / as the data that except by the API from form# broadwayReactCourse
+    2. All the <input> html tag inside of the form that we must pass the <name="username">,<name="password"> as the basic of the data we need to send for the backend through API that must be stored in the backend / as the data that except by the API from form# broadwayReactCourse
+# From Input handle and recive from the users
+==> After the data recive from the user we need to store that data in the form of the state. As we need to make component inside and use of the usestate but beore we need
+# Core method to have input and handle the form
+```ts
+interface ICrediential {
+  email: String | null;
+  password: String | null;
+}
+export const RightSecton = ({ label }: LoginParams) => {
+  const [crediential, setCrediential] = useState<ICrediential>({
+    email: null,
+    password: null,
+  });
+  console.log(crediential);
+
+  const SubmitForm = (e: any) => {
+    e.preventDefault()
+  };
+  return (
+    <div className="w-full md:w-1/2 p-5 flex flex-col justify-center">
+      <h1 className="text-xl font-extrabold text-green-900 text-center md:text-left">
+        Login
+      </h1>
+      <form action="" onSubmit={SubmitForm}>
+        <div className="mt-4 flex flex-col md:flex-row">
+          <label className="block text-md font-medium py-3 md:w-2/5">
+            {label}
+          </label>
+          <input
+            name="email"
+            type="email"
+            onChange={(event) => {
+              setCrediential({
+                ...crediential,
+                email: event.target.value,
+              });
+```
+As we don't handle form by this type of the custom function. We use liberary or plugins to handle the form.
+# 1. React Hook form:
+    This hook form handle useually handle 
+    a. controlled (value is bind for the input field)
+    and
+
+    b. uncontrolled forms( value is not bind for the input field)
+
+    --> We making the input field that are basically two types as controlled and uncontrolled. 
+
+# 2. Formik
+  As formik cannot handle the uncontrolled (data is not binded type)
+
+
+  # so we use  React hook form 
+  This is used because it is simple and can handle for the both react and react native also.
+
+  # How to use React Hook form
+  # 1. By Register Method
+  # 2. By using controll mechanism
+# 1. By register Method:(Mostly not used)
+   1. Make variable including of 
+```ts   
+const {register, formState:{errors}, handleSubmit}=useForm({
+    defaultValues:{
+      email:null,
+      password:null
+    } as Icrediential // ICrediential is the interface that are type bunding 
+   })
+   ```
+          register=(as this will handle uncontrolled inputs )
+
+          formState=(to handle the validation ,errors that the form generated)
+
+          handleSubmit=(while tha form is submit, to handle the submission event we use this)
