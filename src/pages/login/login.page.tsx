@@ -1,10 +1,10 @@
 // import SectionTitle from "../../component/section/title/section-title.components";
 // import SectionDetail from "../../component/section/detail/section-detail.component";
 
-
+import LeftSection from "./leftSection";
 import "./login.page.css";
-import { LeftSection } from "./leftSection";
-import { RightSection } from "./RightSection";
+import RightSection from "./rightSection.page";
+
 const LoginPage = () => {
   
   return (

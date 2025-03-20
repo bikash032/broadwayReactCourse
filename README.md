@@ -448,4 +448,108 @@ As Joi and yup both will work for the same purpose for the validation of the sch
 what ever the validation of the form we required must need from the joi we can follow the same method but need to work from the hook resolever schema
 
 
+lets discuss about the use flow of the joi
+1. First make the DTO schema for any form 
+2. second pass the 
+
+
+```ts
+import Joi from "joi"
+import { joiResolver } from "@hookform/resolvers/joi";
+
+type LoginParams = {
+  label: any;
+};
+interface ICrediential {
+  email: string | null;
+  password: string | null;
+}
+
+const userLoginDTO=Joi.object({
+  email:Joi.string().email({tlds:{allow:false}}).required().messages({
+    "string.base":"Email cannot be Empty"// this will straightly pass the message if there is validaion error
+  }),
+  password:Joi.string().required()// make here for the schema
+})
+
+
+export const RightSection = ({ label }: LoginParams) => {
+const {register, formState:{errors}, handleSubmit}=useForm({
+  defaultValues:{
+      email:null,
+      password:null
+  } as ICrediential,
+  resolver:joiResolver(userLoginDTO)
+})
+
+  const SubmitForm = (data:ICrediential) => {
+  console.log("submit",data);
+  
+  };
+  console.log(errors);
+  
+  return (
+    <div className="w-full md:w-1/2 p-5 flex flex-col justify-center">
+      <h1 className="text-xl font-extrabold text-green-900 text-center md:text-left" >
+        Login
+      </h1>
+      <form onSubmit={handleSubmit(SubmitForm)}>
+        <div className="mt-4 flex flex-col md:flex-row">
+          <label className="block text-md font-medium py-3 md:w-2/5">
+              
+            {label}
+          </label>
+<div>
+<input
+            // name="email"
+            type="email"
+            // onChange={(event) => {
+            //   setCrediential({
+            //     ...crediential,
+            //     email: event.target.value,
+            //   });
+            // }}
+            {...register("email",{required:true})}
+            placeholder="Enter your Email..."
+            className="w-full border border-gray-300 rounded-md p-2 mt-1"
+          />
+          <div className="flex text-red-700 italic text-sm">
+            {
+            errors.email?"*Email is required !":""
+            }
+          </div>
+</div>
+```
+
+# Diffrence between JOI and YUP
+All the task will be done as the same but the thing is that it will straightly pass the message in the schema of YUP as other is same as like JOI
+Joi is Directly importing by <import Joi from "joi">
+but
+Yup must be importing by <import *as Yup from "yup" >
+
+The key diffrence is of the importing 
+as we can pass straight to the schema about the message that what we need to show to the UI about its validation error not by taking its error in the componet inside
+
+# As above all we had used for the  Register Method
+  which is not mostly not used 
+# But there is the contolled method which is mosyly used
+Then what is the diffrence between the controlled and uncontrolled method
+
+ As the controller is used to wrapped for the controlled components
+ As while inputing of the the values that are of the defaults values ad=nd later if we need to change that then if we are able to change that value then it is called as the controlled and that is controlled by the controller but cannot be possible by the Register method
+
+Controller is the react componet to control all the validatio of the form and many more as it the componet of the react-hook form
+
+we can simply find in the controller components in  react hook form. Most of the popular liberary such as antd, MUI are also supported this controller. so it make the fast of the working as comparing to the another
+As mainly we need to strictly follow the documentation for this as mostly it is given the example
+
+As controller inside we can use the components given by hte diffrent libery as
+input we can use as inbuild 
+
+When we work as the frontend developer we need to work as the making of the components which helps for the proper readiability of the code and easy to read by all of the people.
+# Also it will increase the reuseability of the code.
+
+
+
+
 
