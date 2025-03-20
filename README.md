@@ -562,7 +562,7 @@ But after the version 7 from the router we can set up the react application
 As in the react application if we need to use the url/route, first we need to register the router first
 
 
-git problem solved
+git problem solvedgit 
 
 
 
