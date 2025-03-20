@@ -1,13 +1,16 @@
 import GoogleButton from "react-google-button";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Joi from "joi";
 import { joiResolver } from "@hookform/resolvers/joi";
-import { Input } from "antd";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FaRegPaperPlane } from "react-icons/fa6";
 import {
   InputLabel,
   InputType,
+  PasswrodInput,
   TextInputComponents,
 } from "../../component/form/input.component";
+import { Button } from "antd";
 
 type LoginParams = {
   label: any;
@@ -44,14 +47,15 @@ const RightSection = ({ label }: LoginParams) => {
 
   return (
     <div className="w-full md:w-1/2 p-5 flex flex-col justify-center">
-      <h1 className="text-xl font-extrabold text-green-900 text-center md:text-left">
+      <h1 className="text-xl w-full font-extrabold text-green-900 text-center md:text-left">
         Login
       </h1>
       <form onSubmit={handleSubmit(SubmitForm)}>
-        <div className="mt-4 flex flex-col text-teal-900 md:flex-row">
+        <div className="mt-4 flex-row text-teal-900 md:flex-row">
           <InputLabel>Username:</InputLabel>
           <div>
             <TextInputComponents
+            
               control={control}
               type={InputType.EMAIL}
               errorMsg={errors.email?.message ?? null}
@@ -59,10 +63,11 @@ const RightSection = ({ label }: LoginParams) => {
             />
           </div>
         </div>
-        <div className="flex flex-col md:flex-row mt-1 text-teal-900">
+        <div className=" md:flex-row mt-1 text-teal-900">
           <InputLabel>Password:</InputLabel> 
           <div>
-            <TextInputComponents
+            <PasswrodInput
+            
               control={control}
               type={InputType.PASSWORD}
               errorMsg={errors?.password?.message ?? null}
@@ -71,12 +76,15 @@ const RightSection = ({ label }: LoginParams) => {
           </div>
         </div>
         <div className="mt-4 flex justify-end space-x-6">
-          <button className="bg-red-600 text-white py-2 px-6 rounded-md hover:bg-red-700 hover:cursor-pointer">
-            Cancel
-          </button>
-          <button className="bg-green-800 text-white py-2 px-6 rounded-md hover:bg-green-900 hover:cursor-pointer">
-            Submit
-          </button>
+          <Button
+          // style={}
+            htmlType="reset"
+           className="bg-red-600! text-white! font-bold! px-6!"  ><FaRegTrashAlt />
+Cancel</Button>
+            <Button 
+            htmlType="submit"
+            className="bg-teal-700! hover:bg-teal-800! text-white! font-bold! px-6!" ><FaRegPaperPlane />
+ Submit</Button>
         </div>
         <div className="font-medium text-green-900 italic underline flex justify-end mt-4">
           <a href="#">Forget password?</a>
