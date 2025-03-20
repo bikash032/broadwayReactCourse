@@ -549,6 +549,20 @@ input we can use as inbuild
 When we work as the frontend developer we need to work as the making of the components which helps for the proper readiability of the code and easy to read by all of the people.
 # Also it will increase the reuseability of the code.
 
+## Router for React
+As the latest version 19 of the react there is the latest version is available for the react router, before there is the router for the both of the seperate router for react native and for the react web, but now they upgraded it and single react router can be used for the both of the application. 4
+Before we were using for the reactive native as the react router and for the react-web used as the react router-DOM 
+Latest version must be used for the Router for the react 
+
+# use Case of the  react-Router 
+Before the version 7 we need to setup react application first and later we need to setup the router
+
+But after the version 7 from the router we can set up the react application
+
+As in the react application if we need to use the url/route, first we need to register the router first
+
+
+
 
 
 
