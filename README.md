@@ -561,11 +561,49 @@ But after the version 7 from the router we can set up the react application
 
 As in the react application if we need to use the url/route, first we need to register the router first
 
+# React roter is also the components (react ) as it will load on the Root
 
-git problem solvedgit 
+If there is not router configuration then the react app will not work so first that router configuration we need to make
+1. make config folder inside of the SRC
+2. after make the file name as the router.config.tsx
 
 
-hello there to practice the coede
+As there we can config router by the three method
+1. Declarative
+2. Data
+3. Framework
+ 
+As we mostly use of the 
+As INSIDE of the custom frme work there is two types we are using as one of the declerative and  data mode in the custom method.
+# WHAT IS LAZY LOADING IN REACT?
+==> When we loading the components there are plenty of the components that we need to render, (plenty of the import option), as when there is pleanty of the import then at a time we not import all of the input or the components, so we put the components into the lazy mode. 
+# It will given by the browser viewable data for the first of the loading and later will reload more component which help for the browsering of speed fast
+
+we need to import it first from react
+and after we need to mount this within of the one varable and that we need to mount within of the fuction
+
+# What is suspense in react?
+==> As when we mount any components in the application and if that components take time for the rendaring of the components then we can use Suspense for the filling of the gap between rendering of the components and the white screen.
+<<suspense fallback={<>LOADINg</>}>
+loading...........
+</suspense>>
+suspense take a parameter as the fallback ={<>loading.....</>}
+
+
+
+# what is suspense in react?
+==> This is one of the components that is given by the react for the optimization of the application. This we can use for the filling of the gap time between randering  and browser screen of the componet by showing some shorts of userfriendly or the costomizable skeleton or any text.
+as it will take 
+
+
+# we don't need to import function as the lazy loading
+
+
+
+
+
+
+
 
 
 

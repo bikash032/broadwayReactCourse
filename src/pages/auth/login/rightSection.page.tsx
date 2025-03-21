@@ -9,7 +9,7 @@ import {
     InputType,
     PasswrodInput,
     TextInputComponents,
-} from "../../component/form/input.component";
+} from "../../../component/form/input.component";
 import { Button } from "antd";
 
 type LoginParams = {
