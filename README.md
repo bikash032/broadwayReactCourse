@@ -598,9 +598,38 @@ as it will take
 
 # we don't need to import function as the lazy loading
 
+# Diffrence between link, Navlink for the change of the path/url?
+==> As both of them use for the same purpose for the navigation of the pages but
+# Navlink = will automatically give the active flag for the style(classname) which if the url is matched then it will implement the css for that style.
 
+For example  if we are using for the bredcum then the highlighted link will show the same page as its text will hightlihted as per as the css written
 
+But in the case of link we cannot provide such types of the features as
 
+as unless if we dont want to use for the use of the css in the text we can use link also
+
+same as the native a tag that the kay diffrence betweeen is that its natvigation link as a tag uses href="/register" but in the case of the link and navlink we can use
+# to="/register"
+
+when ever i the url it matches then it will change the flag to 
+# active css navlink but not in  link
+
+# specific page css loading(module based or within the specific module of the file) 
+==> If we need to import the specific css (module css) for the specific folder only the specific file form the same current folder then we cannot import that as like
+# wrong for module import ("./file.name.css")
+# correct for module <import styles from "./filename">
+ use case as
+ # <classname={styles[text-custom]}>
+ This is how we can access the module css for the specific css not for the global scope css 
+
+So if we need to work on the specific component then we can use modeule css 
+
+If we do not use the xxxxxx.xxxxxx.module.css rather other file name then that file will available for all the files and folder but when we use for the module then that will works as for that specific follder file as it will over ride for the global scope css also 
+
+important website that uses AI for the making the websites 
+# loveable.dev
+# V0 vercel
+# odoo
 
 
 

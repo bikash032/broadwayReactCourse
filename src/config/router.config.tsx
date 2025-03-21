@@ -3,6 +3,9 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import { lazy, Suspense } from "react";
 import { Skeleton } from "antd";
 import Dashboard from "../pages/dashboard/dashboard.page";
+const ForgetPassword = lazy(() => {
+    return import("../pages/auth/forget-password/forget-password.page");
+});
 const RegisterPage = lazy(() => {
     return import("../pages/auth/register/register.page");
 });
@@ -53,7 +56,20 @@ const RouterConfig = () => {
                 </Suspense>
             ),
         },
-        
+        {
+            path: "/forget-password",
+            element: (
+                <Suspense
+                    fallback={
+                        <>
+                            <Skeleton className="max-h-full!" />
+                        </>
+                    }
+                >
+                    <ForgetPassword />
+                </Suspense>
+            ),
+        },
     ]);
     return (
         <>

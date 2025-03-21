@@ -1,24 +1,25 @@
 import { NavLink } from "react-router";
 import SectionTitle from "../../../component/section/title/section-title.components";
 import { greetingMessage } from "../../../utilities/helpers";
+// import FormItemInput from "antd/es/form/FormItemInput";
 
 const RegisterPage = () => {
     return (
         <>
             <div>
-                <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row items-center">
+                <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row items-end m-20">
                     <div className="bg-teal-900 text-white rounded-2xl m-20 p-20">
                         <SectionTitle
                             subTitle={`${greetingMessage()}`}
                             PageTitle="welcome!!!"
-                            classes={""}
+                            classes=""
                         />
                     </div>
-                    <div className=" flex-col p-6">
-                        <div className="text-2xl mb-4">Register</div>
-                        <form action="" className="flex flex-col space-y-4">
+                    <div className=" flex-col p-6  border-10 items-end">
+                        <div className="text-2xl mb-4 text-teal-900 font-bold">Register!!!</div>
+                        <hr className="color"/>
+                        <form action="" className="flex flex-col space-y-4" >
                             <input
-                                type="text"
                                 placeholder="Full Name"
                                 className="p-2 border rounded"
                             />
@@ -69,7 +70,7 @@ const RegisterPage = () => {
                                 <div className="text-sm text-black  flex space-x-1 mt-3">
                                     <p>Don't Have Account?</p>
                                     <NavLink
-                                        to={"/login"}
+                                        to="/"
                                         className="text-sm italic underline hover:cursor-pointer"
                                     >
                                         Login here!!
