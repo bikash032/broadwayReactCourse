@@ -11,6 +11,7 @@ import {
     TextInputComponents,
 } from "../../../component/form/input.component";
 import { Button } from "antd";
+import { Link, NavLink } from "react-router";
 
 type LoginParams = {
     label: any;
@@ -91,26 +92,31 @@ const RightSection = ({ label }: LoginParams) => {
                     </Button>
                 </div>
                 <div className="font-medium text-green-900 italic underline flex justify-end mt-4">
-                    <a href="#">Forget password?</a>
+                    <NavLink to="/forget-password">
+                        Forget Password?
+                    </NavLink>
                 </div>
                 <div className="flex space-x-5 justify-center">
                     <div className="text-sm text-black  flex space-x-1 mt-3">
                         <p>Don't Have Account?</p>
-                        <a
-                            href="#"
-                            className="text-teal-900 text-sm italic underline"
+                        <NavLink
+                            to="/register"
+                            className="text-sm italic underline text-teal-700"
                         >
-                            {" "}
-                            Sign Up Here!!!
-                        </a>
+                            Sign Up here !!
+                        </NavLink>
                     </div>
                     <hr className="mt-5 text-teal-900 " />
                 </div>
                 <hr className="my-4 text-teal-100 md-" />
                 <div className=" gap-2">
-                    <div>
+                    <NavLink
+                        className="hover:cursor-pointer"
+                        to="/google-login"
+                        target="_blank"
+                    >
                         <GoogleButton />
-                    </div>
+                    </NavLink>
                 </div>
             </form>
         </div>
