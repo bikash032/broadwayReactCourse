@@ -632,6 +632,9 @@ important website that uses AI for the making the websites
 # odoo
 
 
+# How to make router as first base parent class and anoter with router
+As when we want to add the base layout for the diffrent pages
+
 
 
 
