@@ -4,8 +4,8 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+-   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## Expanding the ESLint configuration
 
@@ -13,21 +13,21 @@ If you are developing a production application, we recommend updating the config
 
 ```js
 export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
+    extends: [
+        // Remove ...tseslint.configs.recommended and replace with this
+        ...tseslint.configs.recommendedTypeChecked,
+        // Alternatively, use this for stricter rules
+        ...tseslint.configs.strictTypeChecked,
+        // Optionally, add this for stylistic rules
+        ...tseslint.configs.stylisticTypeChecked,
+    ],
+    languageOptions: {
+        // other options...
+        parserOptions: {
+            project: ["./tsconfig.node.json", "./tsconfig.app.json"],
+            tsconfigRootDir: import.meta.dirname,
+        },
     },
-  },
 });
 ```
 
@@ -39,17 +39,17 @@ import reactX from "eslint-plugin-react-x";
 import reactDom from "eslint-plugin-react-dom";
 
 export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    "react-x": reactX,
-    "react-dom": reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs["recommended-typescript"].rules,
-    ...reactDom.configs.recommended.rules,
-  },
+    plugins: {
+        // Add the react-x and react-dom plugins
+        "react-x": reactX,
+        "react-dom": reactDom,
+    },
+    rules: {
+        // other rules...
+        // Enable its recommended typescript rules
+        ...reactX.configs["recommended-typescript"].rules,
+        ...reactDom.configs.recommended.rules,
+    },
 });
 ```
 
@@ -80,9 +80,9 @@ yarn create v1.22.22
 [4/4] Building fresh packages...
 success Installed "create-vite@6.3.1" with binaries:
 
-- create-vite
-- cva
-  |
+-   create-vite
+-   cva
+    |
 
 # o Select a framework:
 
@@ -234,6 +234,7 @@ There are two types of the components
     Before react version 16.8,it is called as the primary components because it work on the basic of the stateful state as that time functional componets were not able to use to store the states. But later after 18.6 version functionla components also stores data on the basic of the state full components. As later fuctional componetnts also able to maintan the state on the basic of the hooks. So, it is widely used this as the main components as we cannot use mostly class components for the recent react application.
 
 # WHAT IS HOOKS?
+
 ==>As same like in the express there is function called as the middleware which stores the req, res, next, same in the react hook also work as that function. As every thing is controlled or it comes as hooks to control all of the application from the frontend.
 
 There are certain rules for the hook and that rules we need to follow in order to maintain that hooks or to maintain our hooks
@@ -243,17 +244,17 @@ There are certain rules for the hook and that rules we need to follow in order t
 1. Nameing conventation
    -hooks starts with `use<name>()`
 
-   - Hooks can be only in the functionl components
-   - Hooks cannot be used inside of the another hooks
+    - Hooks can be only in the functionl components
+    - Hooks cannot be used inside of the another hooks
 
-   In react we use mainly two hooks
+    In react we use mainly two hooks
 
-   1. state hooks (which helps to maintain the states in the applcation)
-   2. Effeect hooks (also know as the as the side effect hooks / also called as the listerner hooks)
-   3. Performence hooks
-      - when we need to optimize the performence of the application then we can use the performence hooks and there are two types of the performence hooks and they are called as the
-        A. Memo Hooks
-        B. Callback hooks
+    1. state hooks (which helps to maintain the states in the applcation)
+    2. Effeect hooks (also know as the as the side effect hooks / also called as the listerner hooks)
+    3. Performence hooks
+        - when we need to optimize the performence of the application then we can use the performence hooks and there are two types of the performence hooks and they are called as the
+          A. Memo Hooks
+          B. Callback hooks
 
 2. state management hooks
    A. Context Hooks
@@ -266,103 +267,101 @@ There are certain rules for the hook and that rules we need to follow in order t
    As hooks are also called as the function that is used to build the react feature or the functionality as is made by the react which are special following the rules of it.
 
 # Major hooks is (very imoportant)
+
 as basically we can say that hooks are the creater or also called as the listener.
 
 In react if we need to use that hooks it is called as the webhooks
 
 # 1. state hooks (creater hooks )
-   ==> If we need to create the data of the components then that time we can use as the state hooks . Basically state hooks are of the asynchrous hooks
 
-  #  HOW TO MAKE THE STATE HOOKS?
+==> If we need to create the data of the components then that time we can use as the state hooks . Basically state hooks are of the asynchrous hooks
 
-   1. First we need to make/ prepare array / because state hooks provides two features [ (state vairable name), (function to manipulate that variable) ]
+# HOW TO MAKE THE STATE HOOKS?
 
-   # const [email, setEmail]= useState<string>("bikashbishokarma@gmail.com")
+1. First we need to make/ prepare array / because state hooks provides two features [ (state vairable name), (function to manipulate that variable) ]
 
-   as we cannot change the state of the variable by using
-   // email="hello@gmail.com"==> This will be the syntex error
+# const [email, setEmail]= useState<string>("bikashbishokarma@gmail.com")
 
-   also cannot change by using of
-   // setEmail("hello2@gmail.com")
-   As this will bring the infinite times of the loading for the hooks # This will be shown in the browser console that too many render in the application that reasulting of the crash of the server.
-   As the top state is render twice it is because there we used first email and its state. first render is because of the state variable[email] and second it render because of the state ["bikashBishokarma@gmail.com"]
+as we cannot change the state of the variable by using
+// email="hello@gmail.com"==> This will be the syntex error
 
+also cannot change by using of
+// setEmail("hello2@gmail.com")
+As this will bring the infinite times of the loading for the hooks # This will be shown in the browser console that too many render in the application that reasulting of the crash of the server.
+As the top state is render twice it is because there we used first email and its state. first render is because of the state variable[email] and second it render because of the state ["bikashBishokarma@gmail.com"]
 
       To change the state we need to perform the action as need to change by using of the actin that need to be trigger
 
 # 2. EFFECT HOOKS what is side effect hooks?
-   --> As basically we use state hook to create the hooks and if there is any shorts of the change is happen then we can use effect hooks to handel or to listen that hooks.
 
-   we can use effect  hooks by important three ways in react ## [very_very_very_Important_don't_to_forget]
-    1. UseEffect((callBack function)=>{
-      console.log("This hook is always trigger")
-    })  
-            This need to import form the react.
-   
-   While use of the hooks if the hooks maintain the state and if we need to update that hooks then that time we can use the side effect hooks.
-   As when we change the effect from the props then we can tell that as the side effect hooks.
+--> As basically we use state hook to create the hooks and if there is any shorts of the change is happen then we can use effect hooks to handel or to listen that hooks.
+
+we can use effect hooks by important three ways in react ## [very_very_very_Important_don't_to_forget] 1. UseEffect((callBack function)=>{
+console.log("This hook is always trigger")
+})  
+ This need to import form the react.
+
+While use of the hooks if the hooks maintain the state and if we need to update that hooks then that time we can use the side effect hooks.
+As when we change the effect from the props then we can tell that as the side effect hooks.
 
 as the function that are used inside of the side effect hooks cannot be made for the async function as we used for the setTimeOut function inside of it which cannot be possibe to make for the async function but can be done for it inside of we can pass the async function[iife_function]
 
- #   what is props?
+# what is props?
 
 ==> The data that we provide for the components is called as the props. As props can be passed from one components to the another components
 
-
 # WHat is mean by props drilling?
+
 --> As when the parent components are sending props to the another child components then it is called as the props drilling. As the props are send from parent to child but not send from child to parent. It can be handeled by event handeler of the props
 
-
 # what is psedu class in Tailwind css or in the react ?
+
 =>A pseudo-class is a special CSS rule that applies styles based on an element's state (like hover, focus, or first-child).
 In Tailwind CSS, pseudo-classes are used by adding them before the style class, separated by a colon (:)
 
 # How do we send user any greeting based on the time frame?
---> If we want to make our websites as the UI attractive then we can add the greeting function to make busy and give impression to our customer. So, based on the time frame we can send our user the greeting message and this can be done by the simple logic 
+
+--> If we want to make our websites as the UI attractive then we can add the greeting function to make busy and give impression to our customer. So, based on the time frame we can send our user the greeting message and this can be done by the simple logic
 
 # first make the logic component with segregation inside any file as eg- inside of the utilities by saying greettinguser.tsx
+
 # logic must includes the correct timeframe
 
-
 # React form
-imputs are 
-  -type
-    -Text,(maximum of 255 character)
-    - number,
-    - url, 
-    - password, 
-    - email, 
-    - hidden, 
-    - file, 
-    - radio, 
-    - checkbox, 
-    - dateTime, 
-    - range, 
-    - tel, 
-    - reset, 
-    - button
+
+imputs are
+-type
+-Text,(maximum of 255 character) - number, - url, - password, - email, - hidden, - file, - radio, - checkbox, - dateTime, - range, - tel, - reset, - button
+
 # What do we do operation with the form?
+
 1. First we need to submit form => Kasari and k ley garxa
-      # Submit of form is of last action 
-      # form is always comes from the submit button from click event
-      # As form submit is not the button event as it will triger the event.
-  # what is the EVENT?
+    # Submit of form is of last action
+    # form is always comes from the submit button from click event
+    # As form submit is not the button event as it will triger the event.
+
+# what is the EVENT?
+
       Event is the action performed by the html elements.
-   # Any things that we are doing inside of the web browser is called as the event
 
+# Any things that we are doing inside of the web browser is called as the event
 
-    # There are many types of the events 
- As we see the button in the html that is is just the button(HTML) elment that will trigger the event for the submit acton. As we need to pass the type that will perform the event, so when we make the html tag we need to pass our type that is similar to the name that we mentioned to backend such as submit reset, username, password, role and everything 
-2. second we need to collect the data from the users and how to collect
+    # There are many types of the events
 
+As we see the button in the html that is is just the button(HTML) elment that will trigger the event for the submit acton. As we need to pass the type that will perform the event, so when we make the html tag we need to pass our type that is similar to the name that we mentioned to backend such as submit reset, username, password, role and everything 2. second we need to collect the data from the users and how to collect
 
-   # let's handle the form in react
-   1. Firstly form will be not handled by the action in the react. So, for this we need to handle by it with the event listner. 
+# let's handle the form in react
 
-    2. All the <input> html tag inside of the form that we must pass the <name="username">,<name="password"> as the basic of the data we need to send for the backend through API that must be stored in the backend / as the data that except by the API from form# broadwayReactCourse
+1. Firstly form will be not handled by the action in the react. So, for this we need to handle by it with the event listner.
+
+2. All the <input> html tag inside of the form that we must pass the <name="username">,<name="password"> as the basic of the data we need to send for the backend through API that must be stored in the backend / as the data that except by the API from form# broadwayReactCourse
+
 # From Input handle and recive from the users
+
 ==> After the data recive from the user we need to store that data in the form of the state. As we need to make component inside and use of the usestate but beore we need
+
 # Core method to have input and handle the form
+
 ```ts
 interface ICrediential {
   email: String | null;
@@ -373,7 +372,7 @@ export const RightSecton = ({ label }: LoginParams) => {
     email: null,
     password: null,
   });
-  console.log(crediential);
+  // console.log(crediential);
 
   const SubmitForm = (e: any) => {
     e.preventDefault()
@@ -397,36 +396,50 @@ export const RightSecton = ({ label }: LoginParams) => {
                 email: event.target.value,
               });
 ```
+
 As we don't handle form by this type of the custom function. We use liberary or plugins to handle the form.
+
 # 1. React Hook form:
-    This hook form handle useually handle 
+
+    This hook form handle useually handle
     a. controlled (value is bind for the input field)
     and
 
     b. uncontrolled forms( value is not bind for the input field)
 
-    --> We making the input field that are basically two types as controlled and uncontrolled. 
+    --> We making the input field that are basically two types as controlled and uncontrolled.
 
 # 2. Formik
-  As formik cannot handle the uncontrolled (data is not binded type)
 
+As formik cannot handle the uncontrolled (data is not binded type)
 
-  # so we use  React hook form 
-  This is used because it is simple and can handle for the both react and react native also.
+# so we use React hook form
 
-  # How to use React Hook form
-  # 1. By Register Method
-  # 2. By using controll mechanism
+This is used because it is simple and can handle for the both react and react native also.
+
+# How to use React Hook form
+
+# 1. By Register Method
+
+# 2. By using controll mechanism
+
 # 1. By register Method:(Mostly not used)
-   1. Make variable including of 
-```ts   
-const {register, formState:{errors}, handleSubmit}=useForm({
-    defaultValues:{
-      email:null,
-      password:null
-    } as Icrediential // ICrediential is the interface that are type bunding 
-   })
-   ```
+
+1. Make variable including of
+
+```ts
+const {
+    register,
+    formState: { errors },
+    handleSubmit,
+} = useForm({
+    defaultValues: {
+        email: null,
+        password: null,
+    } as Icrediential, // ICrediential is the interface that are type bunding
+});
+```
+
           register=(as this will handle uncontrolled inputs )
 
           formState=(to handle the validation ,errors that the form generated)
@@ -434,24 +447,29 @@ const {register, formState:{errors}, handleSubmit}=useForm({
           handleSubmit=(while tha form is submit, to handle the submission event we use this)
 
 # Validation of the form from the frontend
+
 # 1. Yup
+
 # 2. Joi
 
-Basically client can provide any shorts of the data from the frontend but also we need to control as email,  password as max, min and including character and so on
+Basically client can provide any shorts of the data from the frontend but also we need to control as email, password as max, min and including character and so on
 
 As Joi and yup both will work for the same purpose for the validation of the schema of the form
 
 # validation using of the react-hook-form
+
 # 1. <yarn add yup/joi @reacthook/resolvers>
-    form here we can use any of the libery for the schema validation 
+
+    form here we can use any of the libery for the schema validation
+
 # 2. @reacthook/resolvers is required
+
 what ever the validation of the form we required must need from the joi we can follow the same method but need to work from the hook resolever schema
 
-
 lets discuss about the use flow of the joi
-1. First make the DTO schema for any form 
-2. second pass the 
 
+1. First make the DTO schema for any form
+2. second pass the
 
 ```ts
 import Joi from "joi"
@@ -484,10 +502,10 @@ const {register, formState:{errors}, handleSubmit}=useForm({
 
   const SubmitForm = (data:ICrediential) => {
   console.log("submit",data);
-  
+
   };
   console.log(errors);
-  
+
   return (
     <div className="w-full md:w-1/2 p-5 flex flex-col justify-center">
       <h1 className="text-xl font-extrabold text-green-900 text-center md:text-left" >
@@ -496,7 +514,7 @@ const {register, formState:{errors}, handleSubmit}=useForm({
       <form onSubmit={handleSubmit(SubmitForm)}>
         <div className="mt-4 flex flex-col md:flex-row">
           <label className="block text-md font-medium py-3 md:w-2/5">
-              
+
             {label}
           </label>
 <div>
@@ -522,39 +540,46 @@ const {register, formState:{errors}, handleSubmit}=useForm({
 ```
 
 # Diffrence between JOI and YUP
+
 All the task will be done as the same but the thing is that it will straightly pass the message in the schema of YUP as other is same as like JOI
 Joi is Directly importing by <import Joi from "joi">
 but
-Yup must be importing by <import *as Yup from "yup" >
+Yup must be importing by <import \*as Yup from "yup" >
 
-The key diffrence is of the importing 
+The key diffrence is of the importing
 as we can pass straight to the schema about the message that what we need to show to the UI about its validation error not by taking its error in the componet inside
 
-# As above all we had used for the  Register Method
-  which is not mostly not used 
+# As above all we had used for the Register Method
+
+which is not mostly not used
+
 # But there is the contolled method which is mosyly used
+
 Then what is the diffrence between the controlled and uncontrolled method
 
- As the controller is used to wrapped for the controlled components
- As while inputing of the the values that are of the defaults values ad=nd later if we need to change that then if we are able to change that value then it is called as the controlled and that is controlled by the controller but cannot be possible by the Register method
+As the controller is used to wrapped for the controlled components
+As while inputing of the the values that are of the defaults values ad=nd later if we need to change that then if we are able to change that value then it is called as the controlled and that is controlled by the controller but cannot be possible by the Register method
 
 Controller is the react componet to control all the validatio of the form and many more as it the componet of the react-hook form
 
-we can simply find in the controller components in  react hook form. Most of the popular liberary such as antd, MUI are also supported this controller. so it make the fast of the working as comparing to the another
+we can simply find in the controller components in react hook form. Most of the popular liberary such as antd, MUI are also supported this controller. so it make the fast of the working as comparing to the another
 As mainly we need to strictly follow the documentation for this as mostly it is given the example
 
 As controller inside we can use the components given by hte diffrent libery as
-input we can use as inbuild 
+input we can use as inbuild
 
 When we work as the frontend developer we need to work as the making of the components which helps for the proper readiability of the code and easy to read by all of the people.
+
 # Also it will increase the reuseability of the code.
 
 ## Router for React
-As the latest version 19 of the react there is the latest version is available for the react router, before there is the router for the both of the seperate router for react native and for the react web, but now they upgraded it and single react router can be used for the both of the application. 4
-Before we were using for the reactive native as the react router and for the react-web used as the react router-DOM 
-Latest version must be used for the Router for the react 
 
-# use Case of the  react-Router 
+As the latest version 19 of the react there is the latest version is available for the react router, before there is the router for the both of the seperate router for react native and for the react web, but now they upgraded it and single react router can be used for the both of the application. 4
+Before we were using for the reactive native as the react router and for the react-web used as the react router-DOM
+Latest version must be used for the Router for the react
+
+# use Case of the react-Router
+
 Before the version 7 we need to setup react application first and later we need to setup the router
 
 But after the version 7 from the router we can set up the react application
@@ -564,76 +589,85 @@ As in the react application if we need to use the url/route, first we need to re
 # React roter is also the components (react ) as it will load on the Root
 
 If there is not router configuration then the react app will not work so first that router configuration we need to make
+
 1. make config folder inside of the SRC
 2. after make the file name as the router.config.tsx
 
-
 As there we can config router by the three method
+
 1. Declarative
 2. Data
 3. Framework
- 
-As we mostly use of the 
-As INSIDE of the custom frme work there is two types we are using as one of the declerative and  data mode in the custom method.
+
+As we mostly use of the
+As INSIDE of the custom frme work there is two types we are using as one of the declerative and data mode in the custom method.
+
 # WHAT IS LAZY LOADING IN REACT?
-==> When we loading the components there are plenty of the components that we need to render, (plenty of the import option), as when there is pleanty of the import then at a time we not import all of the input or the components, so we put the components into the lazy mode. 
+
+==> When we loading the components there are plenty of the components that we need to render, (plenty of the import option), as when there is pleanty of the import then at a time we not import all of the input or the components, so we put the components into the lazy mode.
+
 # It will given by the browser viewable data for the first of the loading and later will reload more component which help for the browsering of speed fast
 
 we need to import it first from react
 and after we need to mount this within of the one varable and that we need to mount within of the fuction
 
 # What is suspense in react?
+
 ==> As when we mount any components in the application and if that components take time for the rendaring of the components then we can use Suspense for the filling of the gap between rendering of the components and the white screen.
 <<suspense fallback={<>LOADINg</>}>
 loading...........
 </suspense>>
 suspense take a parameter as the fallback ={<>loading.....</>}
 
-
-
 # what is suspense in react?
-==> This is one of the components that is given by the react for the optimization of the application. This we can use for the filling of the gap time between randering  and browser screen of the componet by showing some shorts of userfriendly or the costomizable skeleton or any text.
-as it will take 
 
+==> This is one of the components that is given by the react for the optimization of the application. This we can use for the filling of the gap time between randering and browser screen of the componet by showing some shorts of userfriendly or the costomizable skeleton or any text.
+as it will take
 
 # we don't need to import function as the lazy loading
 
 # Diffrence between link, Navlink for the change of the path/url?
+
 ==> As both of them use for the same purpose for the navigation of the pages but
+
 # Navlink = will automatically give the active flag for the style(classname) which if the url is matched then it will implement the css for that style.
 
-For example  if we are using for the bredcum then the highlighted link will show the same page as its text will hightlihted as per as the css written
+For example if we are using for the bredcum then the highlighted link will show the same page as its text will hightlihted as per as the css written
 
 But in the case of link we cannot provide such types of the features as
 
 as unless if we dont want to use for the use of the css in the text we can use link also
 
 same as the native a tag that the kay diffrence betweeen is that its natvigation link as a tag uses href="/register" but in the case of the link and navlink we can use
+
 # to="/register"
 
-when ever i the url it matches then it will change the flag to 
-# active css navlink but not in  link
+when ever i the url it matches then it will change the flag to
 
-# specific page css loading(module based or within the specific module of the file) 
+# active css navlink but not in link
+
+# specific page css loading(module based or within the specific module of the file)
+
 ==> If we need to import the specific css (module css) for the specific folder only the specific file form the same current folder then we cannot import that as like
+
 # wrong for module import ("./file.name.css")
+
 # correct for module <import styles from "./filename">
- use case as
- # <classname={styles[text-custom]}>
- This is how we can access the module css for the specific css not for the global scope css 
 
-So if we need to work on the specific component then we can use modeule css 
+use case as
 
-If we do not use the xxxxxx.xxxxxx.module.css rather other file name then that file will available for all the files and folder but when we use for the module then that will works as for that specific follder file as it will over ride for the global scope css also 
+# <classname={styles[text-custom]}>
 
-important website that uses AI for the making the websites 
+This is how we can access the module css for the specific css not for the global scope css
+
+So if we need to work on the specific component then we can use modeule css
+
+If we do not use the xxxxxx.xxxxxx.module.css rather other file name then that file will available for all the files and folder but when we use for the module then that will works as for that specific follder file as it will over ride for the global scope css also
+
+important website that uses AI for the making the websites
+
 # loveable.dev
+
 # V0 vercel
+
 # odoo
-
-
-
-
-
-
-
