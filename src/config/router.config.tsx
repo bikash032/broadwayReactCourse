@@ -6,6 +6,7 @@ import AdminLayout from "../pages/layout/admin.layout";
 import NotFound from "../component/error/not-found.component";
 import ForgetPassword from "../pages/auth/forget-password/forget-password.page";
 import AdminDashboard from "../pages/admin/dashboard/dashboard.page";
+import BannerList from "../pages/admin/banner/banner-list-page";
 
 const RouterConfig = () => {
     let router = createBrowserRouter([
@@ -31,7 +32,7 @@ const RouterConfig = () => {
                 },
                 {
                     path: "banner",
-                    element: <>Banner Page</>,
+                    element: <BannerList />,
                 },
                 {
                     path: "brand",
