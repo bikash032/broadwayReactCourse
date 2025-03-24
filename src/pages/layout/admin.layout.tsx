@@ -37,56 +37,56 @@ function getItem(
 
 const items: MenuItem[] = [
     getItem(
-        <NavLink to={"/dashboard"} className="font-bold! text-xl!">
+        <NavLink to={"/admin"} className="font-bold! text-xl!">
             Dashboard
         </NavLink>,
         "1",
         <FaHome className="font-bold! text-xl!" />
     ),
     getItem(
-        <NavLink to={"/dashboard/banner"} className="font-bold! text-xl!">
+        <NavLink to={"/admin/banner"} className="font-bold! text-xl!">
             Banner
         </NavLink>,
         "2",
         <FaImage className="font-bold! text-xl!" />
     ),
     getItem(
-        <NavLink to={"/dashboard/brand"} className="font-bold! text-xl!">
+        <NavLink to={"/admin/brand"} className="font-bold! text-xl!">
             Brand
         </NavLink>,
         "3",
         <FaB className=" text-2xl!" />
     ),
     getItem(
-        <NavLink to={"/dashboard/category"} className="font-bold! text-xl!">
+        <NavLink to={"/admin/category"} className="font-bold! text-xl!">
             Category
         </NavLink>,
         "4",
         <FaSitemap className="text-2xl!" />
     ),
     getItem(
-        <NavLink to={"/dashboard/users"} className="font-bold! text-xl!">
+        <NavLink to={"/admin/users"} className="font-bold! text-xl!">
             Users
         </NavLink>,
         "5",
         <FaUserGroup className="text-2xl!" />
     ),
     getItem(
-        <NavLink to={"/dashboard/product"} className="font-bold! text-xl!">
+        <NavLink to={"/admin/product"} className="font-bold! text-xl!">
             Product
         </NavLink>,
         "6",
         <FaShoppingBag className="text-2xl!" />
     ),
     getItem(
-        <NavLink to={"/dashboard/cart-order"} className="font-bold! text-xl!">
+        <NavLink to={"/admin/cart-order"} className="font-bold! text-xl!">
             Cart and Order
         </NavLink>,
         "7",
         <FaShoppingCart className="text-2xl!" />
     ),
     getItem(
-        <NavLink to={"/dashboard/message"} className="font-bold! text-xl!">
+        <NavLink to={"/admin/message"} className="font-bold! text-xl!">
             Message
         </NavLink>,
         "7",

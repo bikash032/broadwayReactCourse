@@ -1,123 +1,50 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-// import LoginPage from "../pages/login/login.page";
-import { lazy, Suspense } from "react";
-import { Skeleton } from "antd";
-const AdminDashboard =lazy(()=>{
-    return import("../pages/admin/dashboard/dashboard.page");
-})
+import LoginPage from "../pages/auth/login/login.page";
+import RegisterPage from "../pages/auth/register/register.page";
+import AdminLayout from "../pages/layout/admin.layout";
+import AdminDashboard from "../pages/admin/dashboard/dashboard.page";
+import NotFound from "../pages/error/not-found.component";
+import ForgetPassword from "../pages/auth/forget-password/forget-password.page";
 
-const AdminLayout = lazy(() => {
-  return import("../pages/layout/admin.layout");
-});
-const NotFound = lazy(() => {
-  return import("../component/error/not-found.component");
-});
-
-const ForgetPassword = lazy(() => {
-  return import("../pages/auth/forget-password/forget-password.page");
-});
-const RegisterPage = lazy(() => {
-  return import("../pages/auth/register/register.page");
-});
-const LoginPage = lazy(() => {
-  return import("../pages/auth/login/login.page");
-});
 const RouterConfig = () => {
-  let router = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <Suspense
-          fallback={
-            <>
-              <Skeleton className="max-h-full!" />
-            </>
-          }
-        >
-          <LoginPage />
-        </Suspense>
-      ),
-    },
-    {
-      path: "/register",
-      element: (
-        <Suspense
-          fallback={
-            <>
-              <Skeleton className="max-h-full!" />
-            </>
-          }
-        >
-          <RegisterPage />
-        </Suspense>
-      ),
-    },
-    {
-      path: "/dashboard/",
-      element: 
-      (
-        <Suspense
-            fallback={
-                <>
-                    <Skeleton className="max-h-full!" />
-                </>
-            }
-        >
-        <AdminLayout/>
-        </Suspense>
-    ),
-      children: [
+    let router = createBrowserRouter([
         {
-          path: "banner",
-          element: (
-            <Suspense
-              fallback={
-                <>
-                  <Skeleton className="max-h-full!" />
-                </>
-              }
-            >
-            <>hello</>
-            </Suspense>
-          ),
+            path: "/",
+            element: <LoginPage />,
         },
-      ],
-    },
-    {
-      path: "/forget-password",
-      element: (
-        <Suspense
-          fallback={
-            <>
-              <Skeleton className="max-h-full!" />
-            </>
-          }
-        >
-          <ForgetPassword />
-        </Suspense>
-      ),
-    },
-    {
-      path: "/dashboard/*",
-      element: (
-        <Suspense
-          fallback={
-            <>
-              <Skeleton className="max-h-full!" />
-            </>
-          }
-        >
-          <NotFound />
-        </Suspense>
-      ),
-    },
-  ]);
+        {
+            path: "/register",
+            element: <RegisterPage />,
+        },
+        {
+            path: "/admin",
+            element: <AdminLayout />,
+            // children: [
+            //     {
+            //         path: "dashboard",
+            //         element: <AdminDashboard />,
+            //     },
+            //     {
+            //         path: "banner",
+            //         element: <NotFound />,
+            //     },
+            // ],
+        },
+        {
+            path: "/forget-password",
+            element: <ForgetPassword />,
+        },
+        {
+            path: "*",
+            element: <NotFound />,
+        },
+    ]);
 
-  return (
-    <>
-      <RouterProvider router={router}></RouterProvider>
-    </>
-  );
+    return (
+        <>
+            <RouterProvider router={router}></RouterProvider>
+        </>
+    );
 };
 
 export default RouterConfig;
