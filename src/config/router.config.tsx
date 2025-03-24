@@ -2,9 +2,10 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import LoginPage from "../pages/auth/login/login.page";
 import RegisterPage from "../pages/auth/register/register.page";
 import AdminLayout from "../pages/layout/admin.layout";
-import AdminDashboard from "../pages/admin/dashboard/dashboard.page";
-import NotFound from "../pages/error/not-found.component";
+// import AdminDashboard from "../pages/admin/dashboard/dashboard.page";
+import NotFound from "../component/error/not-found.component";
 import ForgetPassword from "../pages/auth/forget-password/forget-password.page";
+import AdminDashboard from "../pages/admin/dashboard/dashboard.page";
 
 const RouterConfig = () => {
     let router = createBrowserRouter([
@@ -17,26 +18,50 @@ const RouterConfig = () => {
             element: <RegisterPage />,
         },
         {
-            path: "/admin",
-            element: <AdminLayout />,
-            // children: [
-            //     {
-            //         path: "dashboard",
-            //         element: <AdminDashboard />,
-            //     },
-            //     {
-            //         path: "banner",
-            //         element: <NotFound />,
-            //     },
-            // ],
-        },
-        {
             path: "/forget-password",
             element: <ForgetPassword />,
         },
         {
-            path: "*",
-            element: <NotFound />,
+            path: "/admin",
+            element: <AdminLayout />,
+            children: [
+                {
+                    index: true,
+                    element: <AdminDashboard />,
+                },
+                {
+                    path: "banner",
+                    element: <>Banner Page</>,
+                },
+                {
+                    path: "brand",
+                    element: <>Brand Page</>,
+                },
+                {
+                    path: "category",
+                    element: <>Category page</>,
+                },
+                {
+                    path: "users",
+                    element: <>Users Page</>,
+                },
+                {
+                    path: "product",
+                    element: <>Product Page</>,
+                },
+                {
+                    path: "cart-categoty",
+                    element: <>Cart and category Page</>,
+                },
+                {
+                    path: "message",
+                    element: <>Message Page</>,
+                },
+                {
+                    path: "*",
+                    element: <NotFound />,
+                },
+            ],
         },
     ]);
 

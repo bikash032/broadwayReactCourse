@@ -16,7 +16,7 @@ import {
     FaUser,
     FaUserGroup,
 } from "react-icons/fa6";
-import { NavLink } from "react-router";
+import { NavLink, Outlet } from "react-router";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -140,18 +140,7 @@ const AdminLayout = () => {
                 </div>
 
                 <Content className="bg-blue-100! ">
-                    {/* <Breadcrumb className="bg-orange-400!">
-            <Breadcrumb.Item className="px-3">Admin</Breadcrumb.Item>
-            <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
-          </Breadcrumb>
-          <div
-            style={{
-              padding: 24,
-              minHeight: 360,
-            }}
-          >
-            Bill is a cat.
-          </div> */}
+                    <Outlet></Outlet>
                 </Content>
                 <Footer className=" flex justify-center  text- bg-blue-100!">
                     Daraz ©{new Date().getFullYear()} Created by @Bikash
