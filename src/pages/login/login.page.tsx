@@ -1,9 +1,11 @@
 // import SectionTitle from "../../component/section/title/section-title.components";
 // import SectionDetail from "../../component/section/detail/section-detail.component";
 
-import LeftSection from "./leftSection";
-import "./login.page.css";
-import ReightSection from "./RightSection";
+import ReightSection from "../../_CorePractice/yupValidationSchema";
+import LeftSection from "../auth/login/leftSection";
+
+
+
 
 const LoginPage = () => {
   

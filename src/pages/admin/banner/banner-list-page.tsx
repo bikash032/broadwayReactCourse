@@ -1,9 +1,111 @@
-import { Breadcrumb, Table } from "antd";
+import { Breadcrumb, Button, Table } from "antd";
 import { AiOutlinePlus } from "react-icons/ai";
-import { FaHome, FaTrash } from "react-icons/fa";
+import { FaHome, FaPen, FaTrash } from "react-icons/fa";
 import { NavLink } from "react-router";
 
 const BannerList = () => {
+    const data = [
+        {
+            id: "a9cccf96-7b0b-49ad-bb4f-f1d5a4963689",
+            title: "Banner1",
+            url: "https://google.com",
+            status: "active",
+            image: {
+                secure_url:
+                    "https://res.cloudinary.com/dv0ichgse/image/upload/v1742913640/mern-36/banner/bp8gr4aihdakxyvbxl4e.jpg",
+                optimized_url:
+                    "https://res.cloudinary.com/dv0ichgse/image/upload/f_auto,q_auto/v1/mern-36/banner/bp8gr4aihdakxyvbxl4e?_a=BAMCkGa40",
+            },
+            createdAt: "2025-03-25T14:34:35.009Z",
+            updatedAt: "2025-03-25T14:34:35.009Z",
+        },
+        {
+            id: "3de6a90f-e229-408c-bae3-c9b57877b367",
+            title: "Banner Updated New",
+            url: "https://google.com",
+            status: "active",
+            image: {
+                secure_url:
+                    "https://res.cloudinary.com/dv0ichgse/image/upload/v1742913549/mern-36/banner/sojcuslw2ijyojlaofff.jpg",
+                optimized_url:
+                    "https://res.cloudinary.com/dv0ichgse/image/upload/f_auto,q_auto/v1/mern-36/banner/sojcuslw2ijyojlaofff?_a=BAMCkGa40",
+            },
+            createdAt: "2025-03-25T14:34:35.009Z",
+            updatedAt: "2025-03-25T14:34:35.009Z",
+        },
+    ];
+    const ColumnList = [
+        {
+            title: <span>Title</span>,
+            dataIndex: "title",
+            render: (val: string) => (
+                <>
+                    <a href={val}>{val}</a>
+                </>
+            ),
+        },
+        {
+            title: "Link",
+            dataIndex: "url",
+            render: (val: string) => (
+                <>
+                    <a className="underline!" href={val}>
+                        {val}
+                    </a>
+                </>
+            ),
+        },
+        {
+            title: "Status",
+            dataIndex: "status",
+            render: (val: string) =>
+                val === "active" ? (
+                    <Button variant="filled" color="magenta">
+                        Active
+                    </Button>
+                ) : (
+                    <Button variant="filled" color="red">
+                        In-Active
+                    </Button>
+                ),
+        },
+        {
+            title: "Image",
+            // dataIndex:"image",
+            render: (_: any, row: any) => (
+                <img
+                    src={row.image.optimized_url}
+                    alt=""
+                    className="w-28 border rounded-md "
+                />
+            ),
+        },
+        {
+            title: "Action",
+            render: (_: any, row: any) => (
+                <>
+                    <div className="flex">
+                        <NavLink
+                            to={"/admin/banner" + row.id}
+                            className={
+                                "me-3! w-8! h-10! flex items-center justify-center text-white!  bg-orange-500! rounded-full"
+                            }
+                        >
+                            <FaPen />
+                        </NavLink>
+                        <NavLink
+                            to={"/admin/banner" + row.id}
+                            className={
+                                "me-3! w-8! h-10! bg-red-500! flex items-center justify-center text-white! rounded-full"
+                            }
+                        >
+                            <FaTrash />
+                        </NavLink>
+                    </div>
+                </>
+            ),
+        },
+    ];
     return (
         <>
             <Breadcrumb className="bg-orange-400! text-white! font-bold!">
@@ -38,23 +140,8 @@ const BannerList = () => {
                 <div className="flex mt-5">
                     <Table
                         className="w-full"
-                        columns={[
-                            {
-                                title: "Title",
-                            },
-                            {
-                                title: "Link",
-                            },
-                            {
-                                title: "Status",
-                            },
-                            {
-                                title: "Image",
-                            },
-                            {
-                                title: "Action",
-                            },
-                        ]}
+                        dataSource={data}
+                        columns={ColumnList}
                     />
 
                     {/* <table className="w-full mt-5">

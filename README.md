@@ -636,7 +636,49 @@ important website that uses AI for the making the websites
 As when we want to add the base layout for the diffrent pages
 
 
+### API integration
+when we using of the integration of the api for the react with the back end we can use for the 
+
+1. Ajax
+2. fetch 
+3. Axios
+# what is the api integration?
+==> Usually as the frontend developer as we are using of  the req methode for basically connection with server as the request method. where they are using fo
+It is basically called as the api call from frontend to backend .
+Basically we are using two packages 
+They are 
+# fetch form node js (is the default package of the node js as for this we dont need to install anything )
+as this is for the basically for the light waigt of the websites'
+
+# axios
+==> for theis we need to install the packages 
+==> Axios is the promise http client for the browseer and node.js
+==> As we can use axios if we neeed to call the API to API for the server based.
+# SSR(server side rendering)
+
+# asios will make the request through the  native HTTPS node js for the server side node js for the performing of the node js
+# http is the default node modulus of the Node js
 
 
+
+Installation of the axois in the applicaion
+we install our axios in our applocation 
+and later we making the .env file inside of the root of the directiory 
+
+# Rules for the use of .env file for the configuration of the axios in the applicaton 
+1. if we are using of the vite application then we need to use as 
+# VITE_APP and followed by what we need to make for the application configuration 
+# if we are using of next application then we need to use as the NEXT_APP
+
+# VITE_APP_API_URL=Url that is running for our backend applicaiton 
+
+# All the methods that are using by the AXIOS is always of the promise based method for which we need handle that promise by making the funcion as async await funciton. 
+
+
+# CORS (cross origin resource sharing)
+==> what is cors ?
+cors is an HTTP- header based mechanism that allows a server to indicate which origins(domain ,schema, or port) other than its own should be permitted to load resources from it.
+
+THis will block the other web pages accessing resurces from a diffrent domain for the security reason.
 
 

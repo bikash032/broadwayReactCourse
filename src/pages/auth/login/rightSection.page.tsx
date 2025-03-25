@@ -1,9 +1,11 @@
+import axios from "axios";
 import GoogleButton from "react-google-button";
 import { useForm } from "react-hook-form";
 import Joi from "joi";
 import { joiResolver } from "@hookform/resolvers/joi";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FaRegPaperPlane } from "react-icons/fa6";
+
 import {
     InputLabel,
     InputType,
@@ -11,11 +13,8 @@ import {
     TextInputComponents,
 } from "../../../component/form/input.component";
 import { Button } from "antd";
-import { Link, NavLink } from "react-router";
+import { NavLink } from "react-router";
 
-type LoginParams = {
-    label: any;
-};
 interface ICrediential {
     email: string;
     password: string;
@@ -28,7 +27,7 @@ const userLoginDTO = Joi.object({
     password: Joi.string().required(),
 });
 
-const RightSection = ({ label }: LoginParams) => {
+const RightSection = () => {
     const {
         formState: { errors },
         handleSubmit,
@@ -41,10 +40,19 @@ const RightSection = ({ label }: LoginParams) => {
         resolver: joiResolver(userLoginDTO),
     });
 
-    const SubmitForm = (data: ICrediential) => {
-        console.log("submit", data);
+    const SubmitForm = async (data: ICrediential) => {
+        try {
+            console.log("login page");
+
+            await axios.post("http://localhost:9000/api/v1/auth/login", data, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+        } catch (exception) {
+            console.log({ exception });
+        }
     };
-    console.log(errors);
 
     return (
         <div className="w-full md:w-1/2 p-5 flex flex-col justify-center">
@@ -92,9 +100,7 @@ const RightSection = ({ label }: LoginParams) => {
                     </Button>
                 </div>
                 <div className="font-medium text-green-900 italic underline flex justify-end mt-4">
-                    <NavLink to="/forget-password">
-                        Forget Password?
-                    </NavLink>
+                    <NavLink to="/forget-password">Forget Password?</NavLink>
                 </div>
                 <div className="flex space-x-5 justify-center">
                     <div className="text-sm text-black  flex space-x-1 mt-3">
